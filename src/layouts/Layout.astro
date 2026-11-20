@@ -1,0 +1,232 @@
+---
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { 
+  title, 
+  description = "Portafolio institucional de Delia Guadalupe Robles Galeana: Coordinadora de Sustentabilidad, Ingeniera en Sistemas Energéticos y Redes Inteligentes (IPN - UPIEM). Especialista en Criterios ESG, Electromovilidad, Smart Grids y Políticas Públicas Climáticas."
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="es" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    
+    <!-- Force light mode on all browsers and extensions -->
+    <meta name="color-scheme" content="light only">
+    <meta name="darkreader-lock" content="true">
+    <meta name="supported-color-schemes" content="light only">
+    <meta name="theme-color" content="#ffffff">
+
+    <!-- Open Graph / Meta -->
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+
+    <!-- Google Fonts: Inter & Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Global Styles -->
+    <style is:global>
+      :root {
+        color-scheme: light only !important;
+        --primary: #047857;
+        --primary-hover: #065f46;
+        --un-blue: #0284c7;
+        --navy-dark: #0f172a;
+        --navy-slate: #1e293b;
+        --surface-white: #ffffff;
+        --surface-subtle: #f8fafc;
+        --border-subtle: #e2e8f0;
+        --border-mid: #cbd5e1;
+        --text-primary: #0f172a;
+        --text-secondary: #475569;
+        --text-muted: #64748b;
+      }
+
+      /* Nuclear override for dark mode extensions */
+      html[data-darkreader-mode] body,
+      html[data-darkreader-scheme="dark"] body,
+      html[data-darkreader-mode] *,
+      html[data-darkreader-scheme="dark"] * {
+        background-color: revert !important;
+        color: revert !important;
+        border-color: revert !important;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      img, picture, video, canvas, svg {
+        max-width: 100%;
+        display: block;
+      }
+
+      html, body {
+        color-scheme: light only !important;
+        background-color: #ffffff !important;
+        color: #0f172a !important;
+        margin: 0;
+        padding: 0;
+        font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        overflow-x: hidden;
+      }
+
+      main {
+        background-color: #ffffff !important;
+      }
+
+      section {
+        background-color: #ffffff !important;
+        color: #0f172a !important;
+      }
+
+      h1, h2, h3, h4 {
+        font-family: 'Space Grotesk', system-ui, sans-serif;
+        color: #0f172a !important;
+        font-weight: 700;
+        letter-spacing: -0.02em;
+      }
+
+      p, span, li, a {
+        color: inherit;
+      }
+
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      /* Clean card standard */
+      .inst-card {
+        background-color: #ffffff !important;
+        border: 1px solid #e2e8f0 !important;
+        border-radius: 10px;
+        box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05);
+        transition: all 0.25s ease;
+      }
+
+      .inst-card:hover {
+        border-color: #cbd5e1 !important;
+        box-shadow: 0 10px 24px -6px rgba(15, 23, 42, 0.08);
+      }
+
+      /* Subtle badge */
+      .badge-section {
+        display: inline-block;
+        padding: 0.35rem 0.85rem;
+        background-color: #ecfdf5 !important;
+        border: 1px solid #a7f3d0 !important;
+        border-radius: 4px;
+        color: #047857 !important;
+        font-size: 0.75rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        margin-bottom: 0.85rem;
+      }
+
+      /* Titles */
+      .section-main-title {
+        font-size: 2.25rem;
+        font-weight: 800;
+        color: #0f172a !important;
+        line-height: 1.25;
+        letter-spacing: -0.02em;
+        margin-bottom: 0.75rem;
+      }
+
+      .section-main-desc {
+        font-size: 1.05rem;
+        color: #475569 !important;
+        line-height: 1.65;
+        max-width: 760px;
+      }
+
+      /* Clean green gradient text */
+      .text-accent-gradient {
+        background: linear-gradient(135deg, #047857 0%, #0284c7 100%) !important;
+        -webkit-background-clip: text !important;
+        -webkit-text-fill-color: transparent !important;
+      }
+
+      /* Custom scrollbar */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #f1f5f9;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #cbd5e1;
+        border-radius: 4px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #94a3b8;
+      }
+    </style>
+    <!-- Anti Dark Reader / Dark Mode Script -->
+    <script is:inline>
+      (function() {
+        // Force light color scheme
+        document.documentElement.style.setProperty('color-scheme', 'light only', 'important');
+        document.documentElement.style.setProperty('background-color', '#ffffff', 'important');
+        document.documentElement.style.setProperty('color', '#0f172a', 'important');
+        
+        // Remove Dark Reader attributes if present
+        function removeDarkReader() {
+          var html = document.documentElement;
+          html.removeAttribute('data-darkreader-mode');
+          html.removeAttribute('data-darkreader-scheme');
+          
+          // Remove Dark Reader style elements
+          var drStyles = document.querySelectorAll('style.darkreader, style[class*="darkreader"], meta[name="darkreader"]');
+          drStyles.forEach(function(el) { 
+            if (!el.getAttribute('content')) el.remove(); 
+          });
+          
+          // Remove Dark Reader overrides from inline styles
+          var allElements = document.querySelectorAll('[style*="--darkreader"]');
+          allElements.forEach(function(el) {
+            var style = el.getAttribute('style');
+            if (style) {
+              style = style.replace(/--darkreader-[^;]+;?\s*/g, '');
+              el.setAttribute('style', style);
+            }
+          });
+        }
+        
+        // Run immediately and also after DOM loads
+        removeDarkReader();
+        document.addEventListener('DOMContentLoaded', removeDarkReader);
+        
+        // Keep checking for 3 seconds (Dark Reader may inject after page load)
+        var checks = 0;
+        var interval = setInterval(function() {
+          removeDarkReader();
+          checks++;
+          if (checks > 15) clearInterval(interval);
+        }, 200);
+      })();
+    </script>
+  </head>
+  <body style="background-color: #ffffff !important; color: #0f172a !important; color-scheme: light only !important;">
+    <slot />
+  </body>
+</html>

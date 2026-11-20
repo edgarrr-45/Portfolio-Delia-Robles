@@ -1,0 +1,250 @@
+---
+// Skills.astro (Clean Institutional Competencies - No Emojis)
+const skillDomains = [
+  {
+    title: "Gobernanza Socioambiental & Criterios ESG",
+    skills: [
+      "Coordinación de Políticas Climáticas",
+      "Metodologías y Metas ODS (Agenda 2030)",
+      "Finanzas Sostenibles y Taxonomías Verdes",
+      "Bioderecho y Bioética Ambiental (UNESCO)",
+      "Análisis Normativo y Regulatorio",
+      "Evaluación de Impacto Socioambiental",
+      "Gestión Estratégica de Proyectos (Agile/Scrum)",
+      "Negociación y Alianzas Multilaterales"
+    ]
+  },
+  {
+    title: "Transición Energética & Seguridad Hídrica",
+    skills: [
+      "Transición Energética Justa",
+      "Smart Grids & Microrredes Aisladas",
+      "Sistemas Fotovoltaicos",
+      "Electromovilidad e Infraestructura de Carga",
+      "Sistemas de Almacenamiento y Baterías",
+      "Tecnologías de Tratamiento y Seguridad Hídrica",
+      "Eficiencia y Auditoría Energética",
+      "Economía Circular"
+    ]
+  },
+  {
+    title: "Ciencia de Datos, Hardware & Teledetección",
+    skills: [
+      "Teledetección Satelital (NASA ARSET)",
+      "Análisis de Datos con Python & Excel Avanzado",
+      "Google Cloud Platform (GCP)",
+      "Sistemas Embebidos y Microcontroladores",
+      "Sistemas DAQ (Data Acquisition) en Tiempo Real",
+      "Internet de las Cosas (IoT) para Telemetría",
+      "Modelado Geoespacial de Redes Urbanas",
+      "Inteligencia Artificial Aplicada a la Industria"
+    ]
+  }
+];
+
+const certifications = [
+  {
+    organization: "NASA ARSET (Applied Remote Sensing Training)",
+    title: "Observación de la Tierra & Teledetección",
+    details: "Certificación en Fundamentos de la Teledetección y Developing Sustainable Earth Science Applications (Módulos 1, 2 y 3)."
+  },
+  {
+    organization: "UNESCO & INAES",
+    title: "Bioderecho y Finanzas Sostenibles",
+    details: "Diplomado en Bioderecho (UNESCO, 2026) y Diplomado en Finanzas Sostenibles (Instituto Nacional de la Economía Social, 2026)."
+  },
+  {
+    organization: "Google Cloud",
+    title: "Arquitectura Cloud & Aprendizaje Automático",
+    details: "Certificaciones en Configuración de Entornos, Balanceo de Carga en Compute Engine, Redes Seguras y Preparación de Datos para APIs de Machine Learning."
+  }
+];
+---
+
+<section id="habilidades" class="skills-section">
+  <div class="skills-container">
+    <div class="header-center">
+      <span class="badge-section">Competencias Institucionales</span>
+      <h2 class="section-main-title">
+        Capacidades Estratégicas y <span class="text-accent-gradient">Acreditaciones</span>
+      </h2>
+      <p class="section-main-desc">
+        Integración interdisciplinaria de rigor científico, modelado computacional y gobernanza climática para organizaciones de alto nivel.
+      </p>
+    </div>
+
+    <!-- Dominios de Competencias -->
+    <div class="domains-grid">
+      {skillDomains.map((domain) => (
+        <article class="domain-card">
+          <h3 class="domain-title">{domain.title}</h3>
+          <div class="chips-flex">
+            {domain.skills.map((skill) => (
+              <span class="skill-tag-clean">{skill}</span>
+            ))}
+          </div>
+        </article>
+      ))}
+    </div>
+
+    <!-- Certificaciones Clave -->
+    <div class="certs-block">
+      <div class="certs-top-row">
+        <h3 class="certs-section-title">Acreditaciones y Diplomados Clave</h3>
+        <span class="languages-pill">
+          Idiomas: Español (Nativo) | Inglés (Avanzado - C1 / Negociaciones Internacionales)
+        </span>
+      </div>
+
+      <div class="certs-grid">
+        {certifications.map((cert) => (
+          <article class="cert-box">
+            <span class="cert-org-lbl">{cert.organization}</span>
+            <h4 class="cert-name-lbl">{cert.title}</h4>
+            <p class="cert-desc-lbl">{cert.details}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .skills-section {
+    padding: 6rem 1.5rem;
+    background-color: #ffffff !important;
+    border-bottom: 1px solid #e2e8f0 !important;
+  }
+
+  .skills-container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .header-center {
+    text-align: center;
+    max-width: 760px;
+    margin: 0 auto 3.5rem auto;
+  }
+
+  .domains-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.75rem;
+    margin-bottom: 3.5rem;
+  }
+
+  .domain-card {
+    background-color: #ffffff !important;
+    border: 1px solid #e2e8f0 !important;
+    border-radius: 8px;
+    padding: 1.75rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  }
+
+  .domain-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #0f172a !important;
+    margin-bottom: 1.25rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #f1f5f9;
+  }
+
+  .chips-flex {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+  }
+
+  .skill-tag-clean {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #334155 !important;
+    background-color: #f8fafc !important;
+    border: 1px solid #e2e8f0 !important;
+    padding: 0.35rem 0.65rem;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+  }
+
+  .skill-tag-clean:hover {
+    background-color: #ecfdf5 !important;
+    border-color: #047857 !important;
+    color: #047857 !important;
+  }
+
+  /* Certifications */
+  .certs-block {
+    padding-top: 1rem;
+  }
+
+  .certs-top-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .certs-section-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #0f172a !important;
+  }
+
+  .languages-pill {
+    background-color: #f0fdf4 !important;
+    border: 1px solid #bbf7d0 !important;
+    padding: 0.35rem 0.85rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #047857 !important;
+  }
+
+  .certs-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+
+  .cert-box {
+    background-color: #ffffff !important;
+    border: 1px solid #e2e8f0 !important;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  }
+
+  .cert-org-lbl {
+    font-size: 0.725rem;
+    font-weight: 700;
+    color: #0284c7 !important;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    display: block;
+    margin-bottom: 0.25rem;
+  }
+
+  .cert-name-lbl {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #0f172a !important;
+    line-height: 1.35;
+    margin-bottom: 0.5rem;
+  }
+
+  .cert-desc-lbl {
+    font-size: 0.85rem;
+    color: #475569 !important;
+    line-height: 1.55;
+  }
+
+  @media (max-width: 1024px) {
+    .domains-grid, .certs-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

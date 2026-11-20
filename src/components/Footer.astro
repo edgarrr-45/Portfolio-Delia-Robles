@@ -1,0 +1,179 @@
+---
+// Footer.astro (Institutional Clean Mode - No Emojis)
+const year = new Date().getFullYear();
+---
+
+<footer class="footer-wrapper">
+  <div class="footer-container">
+    <div class="footer-top-row">
+      <div class="footer-brand">
+        <a href="#inicio" class="footer-logo">
+          <div class="footer-seal">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path>
+            </svg>
+          </div>
+          <span class="brand-text">Delia Guadalupe Robles Galeana</span>
+        </a>
+        <p class="brand-description">
+          Coordinadora de Sustentabilidad • Ingeniera en Sistemas Energéticos y Redes Inteligentes (IPN - UPIEM). Especialista en Criterios ESG, Transición Energética Justa y Gobernanza Socioambiental.
+        </p>
+      </div>
+
+      <div class="footer-nav-groups">
+        <div class="nav-column">
+          <span class="nav-heading">Navegación</span>
+          <a href="#inicio">Inicio</a>
+          <a href="#sobre-mi">Visión Estratégica</a>
+          <a href="#proyectos">Iniciativas</a>
+          <a href="#experiencia">Trayectoria</a>
+          <a href="#habilidades">Competencias</a>
+          <a href="#contacto">Contacto</a>
+        </div>
+        <div class="nav-column">
+          <span class="nav-heading">Recursos & Redes</span>
+          <a href="/CV_Delia_Robles.pdf" download="CV_Delia_Robles.pdf">Descargar Dossier / CV</a>
+          <a href="https://linkedin.com/in/delia-robles-0604763a3" target="_blank" rel="noopener noreferrer">LinkedIn Profesional</a>
+          <a href="https://www.instagram.com/del_roga" target="_blank" rel="noopener noreferrer">Instagram (@del_roga)</a>
+          <a href="mailto:rogadelia10@gmail.com">Correo Institucional</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom-row">
+      <p class="legal-notice">
+        © {year} Delia Guadalupe Robles Galeana. Todos los derechos reservados. Ciudad de México, México.
+      </p>
+      <a href="#inicio" class="back-to-top-btn" title="Volver al inicio">
+        <span>Volver arriba</span>
+        <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"/></svg>
+      </a>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .footer-wrapper {
+    background-color: #0f172a !important;
+    color: #cbd5e1 !important;
+    padding: 4rem 1.5rem 2.5rem 1.5rem;
+    border-top: 1px solid #1e293b !important;
+  }
+
+  .footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .footer-top-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 3rem;
+    padding-bottom: 2.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .footer-brand {
+    max-width: 480px;
+  }
+
+  .footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    text-decoration: none !important;
+    color: #ffffff !important;
+    margin-bottom: 0.85rem;
+  }
+
+  .footer-seal {
+    width: 30px;
+    height: 30px;
+    border-radius: 6px;
+    background-color: #047857 !important;
+    color: #ffffff !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .brand-text {
+    font-size: 1.05rem;
+    font-weight: 800;
+    color: #ffffff !important;
+  }
+
+  .brand-description {
+    font-size: 0.85rem;
+    color: #94a3b8 !important;
+    line-height: 1.6;
+  }
+
+  .footer-nav-groups {
+    display: flex;
+    gap: 3.5rem;
+    flex-wrap: wrap;
+  }
+
+  .nav-column {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .nav-heading {
+    font-size: 0.75rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #38bdf8 !important;
+    margin-bottom: 0.25rem;
+  }
+
+  .nav-column a {
+    color: #94a3b8 !important;
+    text-decoration: none !important;
+    font-size: 0.85rem;
+    transition: color 0.2s ease;
+  }
+
+  .nav-column a:hover {
+    color: #34d399 !important;
+  }
+
+  .footer-bottom-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding-top: 1.75rem;
+  }
+
+  .legal-notice {
+    font-size: 0.8rem;
+    color: #64748b !important;
+  }
+
+  .back-to-top-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #94a3b8 !important;
+    text-decoration: none !important;
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 0.35rem 0.75rem;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+  }
+
+  .back-to-top-btn:hover {
+    color: #ffffff !important;
+    border-color: #34d399 !important;
+  }
+</style>

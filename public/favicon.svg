@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none">
+  <rect width="32" height="32" rx="8" fill="#ecfdf5"/>
+  <!-- Droplet path -->
+  <path d="M16 4C16 4 8 13.5 8 19C8 23.4183 11.5817 27 16 27C20.4183 27 24 23.4183 24 19C24 13.5 16 4 16 4Z" fill="#047857"/>
+  <!-- Leaf / water light highlight -->
+  <path d="M16 11C16 11 11 17 11 20C11 22.7614 13.2386 25 16 25C17.5 25 19 24 19.5 22.5" stroke="#a7f3d0" stroke-width="2" stroke-linecap="round"/>
+</svg>

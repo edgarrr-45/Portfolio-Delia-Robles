@@ -1,0 +1,279 @@
+---
+// About.astro (Clean Institutional Vision - No Emojis, No Dark Background)
+---
+
+<section id="sobre-mi" class="about-section">
+  <div class="about-container">
+    <div class="header-center">
+      <span class="badge-section">Visión Estratégica & Liderazgo</span>
+      <h2 class="section-main-title">
+        Ingeniería, Gobernanza y <span class="text-accent-gradient">Compromiso con la Agenda 2030</span>
+      </h2>
+      <p class="section-main-desc">
+        Como Coordinadora de Sustentabilidad, lidero la formulación de proyectos que vinculan la viabilidad técnica con el impacto social y los más rigurosos estándares ambientales.
+      </p>
+    </div>
+
+    <div class="about-grid">
+      <!-- Columna 1: Perfil y Enfoque Ejecutivo -->
+      <div class="about-narrative-card">
+        <h3 class="narrative-heading">Perfil Ejecutivo</h3>
+        <p class="narrative-p">
+          Mi labor profesional se enfoca en entender que la <strong>transición ecológica</strong> no es únicamente un reto de ingeniería, sino un proceso estratégico que requiere <strong>articulación multisectorial, transparencia regulatoria y datos verificables</strong>.
+        </p>
+        <p class="narrative-p">
+          Egresada de la <strong>UPIEM - IPN</strong> en Sistemas Energéticos y Redes Inteligentes, he coordinado iniciativas de investigación aplicada con instituciones de primer orden como <strong>CINVESTAV, CICATA Legaria y la UNAM</strong>.
+        </p>
+        <p class="narrative-p">
+          Cuento con especializaciones en <strong>Finanzas Sostenibles (INAES)</strong>, <strong>Bioderecho (UNESCO)</strong> y <strong>Observación Satelital de la Tierra (NASA ARSET)</strong>, lo que me permite dialogar eficazmente con organismos multilaterales, entidades gubernamentales y fondos de inversión verde.
+        </p>
+
+        <div class="competencies-stack">
+          <div class="comp-item">
+            <span class="comp-index">01</span>
+            <div>
+              <h4 class="comp-head">Articulación Multisectorial</h4>
+              <p class="comp-body">Construcción de puentes entre academia, industria y gobiernos locales para políticas públicas climáticas.</p>
+            </div>
+          </div>
+          <div class="comp-item">
+            <span class="comp-index">02</span>
+            <div>
+              <h4 class="comp-head">Evaluación de Criterios ESG</h4>
+              <p class="comp-body">Análisis de taxonomías sostenibles, mitigación de riesgos socioambientales e indicadores medibles.</p>
+            </div>
+          </div>
+          <div class="comp-item">
+            <span class="comp-index">03</span>
+            <div>
+              <h4 class="comp-head">Comunicación & Vinculación STEM</h4>
+              <p class="comp-body">Divulgación científica en medios nacionales (Radio IPN) y redes internacionales de inclusión femenina en ciencia.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Columna 2: Alineación con Objetivos ONU (ODS) -->
+      <div class="about-ods-card">
+        <h3 class="ods-title">Alineación con Objetivos ONU (ODS)</h3>
+        <p class="ods-subtitle">
+          Cada programa coordinado responde a metas concretas de la Agenda 2030 para el Desarrollo Sostenible:
+        </p>
+
+        <div class="ods-list-stack">
+          <div class="ods-row">
+            <span class="ods-tag bg-ods-6">ODS 6</span>
+            <div>
+              <h4 class="ods-item-name">Agua Limpia y Saneamiento</h4>
+              <p class="ods-item-desc">Desarrollo de <strong>PuriBag</strong> (bioplástico soluble y purificador de agua galardonado con InnoDrop) y resiliencia hídrica municipal.</p>
+            </div>
+          </div>
+
+          <div class="ods-row">
+            <span class="ods-tag bg-ods-7">ODS 7</span>
+            <div>
+              <h4 class="ods-item-name">Energía Asequible y No Contaminante</h4>
+              <p class="ods-item-desc">Investigación en telemetría DAQ y sistemas embebidos aplicados a la transición energética y movilidad eléctrica.</p>
+            </div>
+          </div>
+
+          <div class="ods-row">
+            <span class="ods-tag bg-ods-11">ODS 11</span>
+            <div>
+              <h4 class="ods-item-name">Ciudades y Comunidades Sostenibles</h4>
+              <p class="ods-item-desc">Investigación aplicada en la plataforma del vehículo eléctrico nacional <strong>Olinia</strong> (seleccionada IPN) y modelado geoespacial de electrolineras.</p>
+            </div>
+          </div>
+
+          <div class="ods-row">
+            <span class="ods-tag bg-ods-13">ODS 13</span>
+            <div>
+              <h4 class="ods-item-name">Acción por el Clima</h4>
+              <p class="ods-item-desc">Propuestas de ley socioambiental y descarbonización de matrices energéticas urbanas.</p>
+            </div>
+          </div>
+
+          <div class="ods-row">
+            <span class="ods-tag bg-ods-17">ODS 17</span>
+            <div>
+              <h4 class="ods-item-name">Alianzas para Lograr los Objetivos</h4>
+              <p class="ods-item-desc">Cooperación técnica con <strong>CINVESTAV, UNAM, UNESCO, IPN</strong> y sociedad civil.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .about-section {
+    padding: 6rem 1.5rem;
+    background-color: #ffffff !important;
+    border-bottom: 1px solid #e2e8f0 !important;
+  }
+
+  .about-container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .header-center {
+    text-align: center;
+    max-width: 760px;
+    margin: 0 auto 3.5rem auto;
+  }
+
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 2.5rem;
+    align-items: start;
+  }
+
+  .about-narrative-card {
+    background-color: #ffffff !important;
+    border: 1px solid #e2e8f0 !important;
+    border-radius: 8px;
+    padding: 2.25rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  }
+
+  .narrative-heading {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #0f172a !important;
+    margin-bottom: 1.15rem;
+  }
+
+  .narrative-p {
+    color: #334155 !important;
+    line-height: 1.7;
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+  }
+
+  .narrative-p strong {
+    color: #0f172a !important;
+  }
+
+  .competencies-stack {
+    margin-top: 1.75rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #e2e8f0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.15rem;
+  }
+
+  .comp-item {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+
+  .comp-index {
+    font-size: 0.95rem;
+    font-weight: 800;
+    color: #047857 !important;
+    background-color: #ecfdf5 !important;
+    border: 1px solid #a7f3d0;
+    width: 32px;
+    height: 32px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .comp-head {
+    font-size: 0.925rem;
+    font-weight: 700;
+    color: #0f172a !important;
+    margin-bottom: 0.15rem;
+  }
+
+  .comp-body {
+    font-size: 0.825rem;
+    color: #64748b !important;
+    line-height: 1.5;
+  }
+
+  /* ODS Card */
+  .about-ods-card {
+    background-color: #ffffff !important;
+    border: 1px solid #e2e8f0 !important;
+    border-radius: 8px;
+    padding: 2.25rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  }
+
+  .ods-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #0f172a !important;
+    margin-bottom: 0.35rem;
+  }
+
+  .ods-subtitle {
+    font-size: 0.85rem;
+    color: #64748b !important;
+    margin-bottom: 1.5rem;
+    line-height: 1.5;
+  }
+
+  .ods-list-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .ods-row {
+    display: flex;
+    gap: 0.85rem;
+    align-items: flex-start;
+    padding-bottom: 0.85rem;
+    border-bottom: 1px solid #f1f5f9;
+  }
+
+  .ods-row:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  .ods-tag {
+    padding: 0.25rem 0.55rem;
+    border-radius: 4px;
+    font-weight: 800;
+    font-size: 0.72rem;
+    color: #ffffff !important;
+    flex-shrink: 0;
+    letter-spacing: 0.04em;
+  }
+
+  .bg-ods-6 { background-color: #26bde2; }
+  .bg-ods-7 { background-color: #e5ad06; }
+  .bg-ods-11 { background-color: #fd9d24; }
+  .bg-ods-13 { background-color: #3f7e44; }
+  .bg-ods-17 { background-color: #19486a; }
+
+  .ods-item-name {
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: #0f172a !important;
+    margin-bottom: 0.15rem;
+  }
+
+  .ods-item-desc {
+    font-size: 0.8rem;
+    color: #475569 !important;
+    line-height: 1.45;
+  }
+
+  @media (max-width: 960px) {
+    .about-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

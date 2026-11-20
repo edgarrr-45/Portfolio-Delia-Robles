@@ -1,0 +1,169 @@
+---
+// Navbar.astro (Institutional Clean Mode)
+---
+
+<header class="navbar-wrapper">
+  <div class="nav-container">
+    <a href="#inicio" class="nav-logo">
+      <div class="logo-seal">
+        <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path>
+        </svg>
+      </div>
+      <div class="logo-text-group">
+        <span class="logo-name">Delia Robles</span>
+        <span class="logo-sub">Sostenibilidad & Política Climática</span>
+      </div>
+    </a>
+
+    <nav class="nav-links">
+      <a href="#inicio" class="nav-link">Inicio</a>
+      <a href="#sobre-mi" class="nav-link">Visión Estratégica</a>
+      <a href="#proyectos" class="nav-link">Iniciativas</a>
+      <a href="#experiencia" class="nav-link">Trayectoria</a>
+      <a href="#habilidades" class="nav-link">Competencias</a>
+      <a href="#contacto" class="nav-link">Contacto</a>
+    </nav>
+
+    <div class="nav-actions">
+      <a href="/CV_Delia_Robles.pdf" download="CV_Delia_Guadalupe_Robles.pdf" class="btn-cv-inst">
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+          <polyline points="7 10 12 15 17 10"/>
+          <line x1="12" y1="15" x2="12" y2="3"/>
+        </svg>
+        <span>Descargar CV</span>
+      </a>
+      <a href="#contacto" class="btn-primary-inst">Alianzas</a>
+    </div>
+  </div>
+</header>
+
+<style>
+  .navbar-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 50;
+    padding: 0.85rem 1.75rem;
+    background-color: #ffffff !important;
+    border-bottom: 1px solid #e2e8f0 !important;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
+  }
+
+  .nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    text-decoration: none !important;
+  }
+
+  .logo-seal {
+    width: 36px;
+    height: 36px;
+    border-radius: 6px;
+    background-color: #ecfdf5 !important;
+    border: 1px solid #a7f3d0 !important;
+    color: #047857 !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .logo-text-group {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .logo-name {
+    font-size: 1.05rem;
+    font-weight: 800;
+    color: #0f172a !important;
+    line-height: 1.2;
+  }
+
+  .logo-sub {
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: #0284c7 !important;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 1.75rem;
+    align-items: center;
+  }
+
+  .nav-link {
+    color: #475569 !important;
+    text-decoration: none !important;
+    font-size: 0.885rem;
+    font-weight: 600;
+    transition: color 0.2s ease;
+  }
+
+  .nav-link:hover {
+    color: #047857 !important;
+  }
+
+  .nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .btn-cv-inst {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 0.45rem !important;
+    padding: 0.45rem 0.95rem !important;
+    border-radius: 6px !important;
+    background-color: #ffffff !important;
+    border: 1px solid #cbd5e1 !important;
+    color: #334155 !important;
+    font-size: 0.825rem !important;
+    font-weight: 600 !important;
+    text-decoration: none !important;
+    transition: all 0.2s ease;
+  }
+
+  .btn-cv-inst:hover {
+    border-color: #047857 !important;
+    color: #047857 !important;
+    background-color: #f0fdf4 !important;
+  }
+
+  .btn-primary-inst {
+    display: inline-flex !important;
+    align-items: center !important;
+    padding: 0.45rem 1.1rem !important;
+    border-radius: 6px !important;
+    background-color: #0f172a !important;
+    color: #ffffff !important;
+    font-size: 0.825rem !important;
+    font-weight: 600 !important;
+    text-decoration: none !important;
+    transition: all 0.2s ease;
+  }
+
+  .btn-primary-inst:hover {
+    background-color: #047857 !important;
+  }
+
+  @media (max-width: 960px) {
+    .nav-links {
+      display: none;
+    }
+  }
+</style>

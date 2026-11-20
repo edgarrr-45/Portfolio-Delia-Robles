@@ -1,0 +1,561 @@
+---
+// Projects.astro (Clean Institutional Initiatives - Balanced 2-Column Grid)
+const initiatives = [
+  {
+    category: "Seguridad Hídrica & Biotecnología",
+    ods: "ODS 6 • ODS 12",
+    badge: "Premio InnoDrop • Cobertura en Medios",
+    title: "PuriBag: Solución Sostenible de Potabilización (Bioplástico IPN)",
+    description: "Liderazgo en el desarrollo de una tecnología basada en biopolímeros biodegradables solubles en agua capaces de diluirse y purificarla simultáneamente. Investigación experimental para mitigar el estrés hídrico mediante biotecnología aplicada y economía circular.",
+    impact: "Primer Lugar Premio InnoDrop • Reseñado en La Jornada, Milenio e IPN Prensa Oficial",
+    tags: ["Tratamiento de Agua", "Bioplástico Soluble", "Polímeros", "Biotecnología", "IPN"],
+    gallery: [
+      {
+        src: "/images/delia_laboratorio_sintesis.jpg",
+        alt: "Delia Robles formulando biopolímero biodegradable en laboratorio",
+        tag: "1. Síntesis"
+      },
+      {
+        src: "/images/delia_laboratorio_purificacion.jpg",
+        alt: "Validación de potabilización y purificación hídrica",
+        tag: "2. Potabilización"
+      }
+    ],
+    pressLinks: [
+      {
+        name: "La Jornada",
+        action: "Leer nota",
+        url: "https://www.jornada.com.mx/noticia/2025/12/14/ciencias/ipn-desarrolla-plastico-capaz-de-diluirse-en-agua-y-purificarla"
+      },
+      {
+        name: "Milenio",
+        action: "Leer nota",
+        url: "https://www.milenio.com/ciencia-y-salud/ipn-desarrolla-plastico-disuelve-purifica-agua"
+      },
+      {
+        name: "IPN Prensa",
+        action: "Comunicado",
+        url: "https://www.ipn.mx/english/press-releases/view-press-release.html?y=2025&n=64&t=18"
+      }
+    ]
+  },
+  {
+    category: "Electromovilidad Nacional",
+    ods: "ODS 7 • ODS 9 • ODS 11",
+    badge: "Seleccionada Convocatoria IPN",
+    title: "Vehículo Eléctrico Olinia & Telemetría DAQ",
+    description: "Investigación aplicada en la plataforma del vehículo eléctrico mexicano Olinia. Desarrollo de sistemas embebidos, diseño de interfaz gráfica (GUI) e instrumentación de adquisición de datos en tiempo real.",
+    impact: "Estudiante seleccionada para el proyecto nacional del vehículo eléctrico Olinia",
+    tags: ["Vehículo Eléctrico Olinia", "Sistemas Embebidos", "DAQ", "Python", "Eficiencia", "IPN"],
+    linkText: "Consultar Selección Oficial (PDF)",
+    linkUrl: "https://www.ipn.mx/assets/files/siis/docs/convocatorias/2025/olinia/estudiantes-olinia.pdf"
+  },
+  {
+    category: "Publicación Científica",
+    ods: "ODS 7 • ODS 13",
+    badge: "Springer Nature",
+    title: "Infraestructura de Electrolineras ZMVM",
+    description: "Coautora de los capítulos publicados en Springer: 'Charging the Future or Stalling the Transition?' y 'Towards Informed EV Purchases', aportando análisis geoespacial y modelos de demanda de carga vehicular.",
+    impact: "2 Capítulos publicados en Springer Nature",
+    tags: ["Springer", "Data Science", "Modelado Geoespacial", "Política Pública"],
+    image: "/images/ev_infrastructure.png",
+    linkText: "Ver Mapa Geoespacial",
+    linkUrl: "/images/ev_infrastructure.png"
+  },
+  {
+    category: "Políticas Públicas",
+    ods: "ODS 13 • ODS 16",
+    badge: "Marco Regulatorio",
+    title: "Propuesta de Ley y Saneamiento Hídrico",
+    description: "Formulación de una propuesta metodológica y legislativa para la gestión integral del agua y la eficiencia ambiental en municipios del Valle de México, alineada a estándares internacionales ESG.",
+    impact: "Iniciativa de política pública formulada",
+    tags: ["Gobernanza", "Políticas Públicas", "Criterios ESG", "Regulación"]
+  },
+  {
+    category: "Comunicación & STEM",
+    ods: "ODS 5 • ODS 17",
+    badge: "Radio IPN 95.7 FM",
+    title: "Diplomacia Científica & Conducción Radio IPN",
+    description: "Producción y conducción de los programas 'Mentes por el Planeta' y 'Voces Entre Nosotras', promoviendo la divulgación con investigadores de frontera y la inclusión de mujeres en áreas científicas.",
+    impact: "Emisión abierta nacional y vinculación Girls in Astronomy",
+    tags: ["Radio IPN", "Girls in Astronomy", "Divulgación Científica", "Liderazgo"],
+    linkText: "Emisión Radio IPN (95.7 FM)",
+    linkUrl: "https://www.ipn.mx/radio/"
+  }
+];
+---
+
+<section id="proyectos" class="initiatives-section">
+  <div class="initiatives-container">
+    <div class="header-center">
+      <span class="badge-section">Portafolio de Iniciativas</span>
+      <h2 class="section-main-title">
+        Proyectos de <span class="text-accent-gradient">Liderazgo Sostenible</span>
+      </h2>
+      <p class="section-main-desc">
+        Iniciativas coordinadas que integran investigación de vanguardia, rigor regulatorio y validación experimental en la transición ecológica.
+      </p>
+    </div>
+
+    <div class="initiatives-grid">
+      {initiatives.map((item) => (
+        <article class="initiative-card">
+          <!-- Top Row: Category + ODS Tag -->
+          <div class="card-meta-top">
+            <span class="card-cat">{item.category}</span>
+            <span class="card-ods">{item.ods}</span>
+          </div>
+
+          <!-- Highlight Pill -->
+          <div class="card-badge-row">
+            <span class="pill-badge">{item.badge}</span>
+          </div>
+
+          <!-- Compact Dual Gallery for PuriBag -->
+          {item.gallery && (
+            <div class="compact-gallery-wrap">
+              <div class="compact-gallery-grid">
+                {item.gallery.map((photo) => (
+                  <div class="compact-photo-frame">
+                    <img src={photo.src} alt={photo.alt} class="compact-photo-img" loading="lazy" />
+                    <span class="compact-photo-tag">{photo.tag}</span>
+                  </div>
+                ))}
+              </div>
+              <p class="compact-gallery-caption">Laboratorio IPN: Biopolímero soluble purificador de agua.</p>
+            </div>
+          )}
+
+          <!-- Image for Springer -->
+          {item.image && (
+            <div class="card-image-wrap">
+              <img src={item.image} alt={item.title} class="card-preview-img" loading="lazy" />
+            </div>
+          )}
+
+          <h3 class="card-title">{item.title}</h3>
+          <p class="card-desc">{item.description}</p>
+
+          <div class="card-impact-box">
+            <span class="impact-label">Impacto Clave:</span>
+            <span class="impact-text">{item.impact}</span>
+          </div>
+
+          <div class="card-tags-list">
+            {item.tags.map((tag) => (
+              <span class="tag-chip">{tag}</span>
+            ))}
+          </div>
+
+          <!-- Press Links for PuriBag -->
+          {item.pressLinks && (
+            <div class="press-section-clean">
+              <span class="press-section-label">
+                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 20H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v1m2 13a2 2 0 0 1-2-2V7m2 13a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"/></svg>
+                Cobertura Oficial en Medios:
+              </span>
+              <div class="press-chips-flex">
+                {item.pressLinks.map((press) => (
+                  <a href={press.url} target="_blank" rel="noopener noreferrer" class="press-chip" title={`Ver cobertura en ${press.name}`}>
+                    <span class="chip-name">{press.name}</span>
+                    <span class="chip-sub">{press.action}</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+                  </a>
+                ))}
+              </div>
+            </div>
+          )}
+
+          <!-- Standard Action Link -->
+          {item.linkUrl && (
+            <div class="card-bottom">
+              <a href={item.linkUrl} target="_blank" rel="noopener noreferrer" class="card-action-link">
+                <span>{item.linkText}</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </a>
+            </div>
+          )}
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .initiatives-section {
+    padding: 5.5rem 1.5rem;
+    background-color: #ffffff !important;
+    border-bottom: 1px solid #e2e8f0 !important;
+    width: 100%;
+    box-sizing: border-box;
+    overflow-x: hidden;
+  }
+
+  .initiatives-container {
+    max-width: 1140px;
+    width: 100%;
+    margin: 0 auto;
+    box-sizing: border-box;
+  }
+
+  .header-center {
+    text-align: center;
+    max-width: 760px;
+    margin: 0 auto 3rem auto;
+  }
+
+  /* Two strict equal columns: minmax(0, 1fr) prevents any child from blowing out column width */
+  .initiatives-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.5rem;
+    align-items: stretch;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .initiative-card {
+    background-color: #ffffff !important;
+    border: 1px solid #e2e8f0 !important;
+    border-radius: 10px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+    transition: all 0.25s ease;
+    min-width: 0;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+
+  .initiative-card:hover {
+    border-color: #cbd5e1 !important;
+    box-shadow: 0 10px 24px -6px rgba(15, 23, 42, 0.08);
+    transform: translateY(-2px);
+  }
+
+  .card-meta-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.65rem;
+    min-width: 0;
+    width: 100%;
+  }
+
+  .card-cat {
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: #0284c7 !important;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    min-width: 0;
+  }
+
+  .card-ods {
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: #047857 !important;
+    background-color: #ecfdf5 !important;
+    border: 1px solid #a7f3d0 !important;
+    padding: 0.2rem 0.55rem;
+    border-radius: 4px;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .card-badge-row {
+    margin-bottom: 0.85rem;
+  }
+
+  .pill-badge {
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: #0f172a !important;
+    background-color: #f1f5f9 !important;
+    border: 1px solid #e2e8f0 !important;
+    padding: 0.2rem 0.65rem;
+    border-radius: 4px;
+    display: inline-block;
+  }
+
+  /* Compact Photos for PuriBag: strictly capped to 120px height, never huge */
+  .compact-gallery-wrap {
+    margin-bottom: 0.85rem;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    overflow: hidden;
+    box-sizing: border-box;
+  }
+
+  .compact-gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.5rem;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+  }
+
+  .compact-photo-frame {
+    position: relative;
+    border-radius: 6px;
+    overflow: hidden;
+    height: 120px !important;
+    max-height: 120px !important;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    border: 1px solid #e2e8f0;
+    background-color: #0f172a;
+    box-sizing: border-box;
+  }
+
+  .compact-photo-img {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: 120px !important;
+    max-height: 120px !important;
+    object-fit: cover !important;
+    object-position: center !important;
+    display: block !important;
+    transition: transform 0.3s ease;
+  }
+
+  .compact-photo-frame:hover .compact-photo-img {
+    transform: scale(1.04);
+  }
+
+  .compact-photo-tag {
+    position: absolute;
+    bottom: 0.35rem;
+    left: 0.35rem;
+    background-color: rgba(15, 23, 42, 0.78);
+    backdrop-filter: blur(4px);
+    color: #ffffff !important;
+    font-size: 0.65rem;
+    font-weight: 700;
+    padding: 0.15rem 0.45rem;
+    border-radius: 3px;
+    letter-spacing: 0.02em;
+    z-index: 2;
+  }
+
+  .compact-gallery-caption {
+    font-size: 0.72rem;
+    color: #64748b !important;
+    margin-top: 0.35rem;
+    line-height: 1.3;
+    font-weight: 500;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  /* Single Image Wrap for Springer */
+  .card-image-wrap {
+    margin-bottom: 0.85rem;
+    border-radius: 6px;
+    overflow: hidden;
+    height: 120px !important;
+    max-height: 120px !important;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    border: 1px solid #e2e8f0;
+    background-color: #f8fafc;
+    box-sizing: border-box;
+  }
+
+  .card-preview-img {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: 120px !important;
+    max-height: 120px !important;
+    object-fit: cover !important;
+    display: block !important;
+  }
+
+  .card-title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #0f172a !important;
+    line-height: 1.35;
+    margin-bottom: 0.65rem;
+    word-break: break-word;
+  }
+
+  .card-desc {
+    font-size: 0.885rem;
+    color: #475569 !important;
+    line-height: 1.6;
+    margin-bottom: 1.15rem;
+    flex-grow: 1;
+  }
+
+  .card-impact-box {
+    background-color: #f8fafc !important;
+    border-left: 3px solid #047857 !important;
+    border-top: 1px solid #e2e8f0;
+    border-right: 1px solid #e2e8f0;
+    border-bottom: 1px solid #e2e8f0;
+    border-radius: 0 5px 5px 0;
+    padding: 0.6rem 0.8rem;
+    font-size: 0.8rem;
+    margin-bottom: 1.15rem;
+    line-height: 1.45;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .impact-label {
+    font-weight: 700;
+    color: #0f172a !important;
+    display: block;
+    margin-bottom: 0.15rem;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  .impact-text {
+    color: #047857 !important;
+    font-weight: 600;
+  }
+
+  .card-tags-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+    margin-bottom: 1.15rem;
+    width: 100%;
+  }
+
+  .tag-chip {
+    font-size: 0.72rem;
+    background-color: #f8fafc !important;
+    border: 1px solid #e2e8f0 !important;
+    color: #64748b !important;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    font-weight: 500;
+  }
+
+  /* Compact Press Section for PuriBag - styled as clean clickable chips */
+  .press-section-clean {
+    margin-top: auto;
+    padding-top: 0.85rem;
+    border-top: 1px solid #f1f5f9;
+    min-width: 0;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .press-section-label {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: #0f172a !important;
+    margin-bottom: 0.45rem;
+  }
+
+  .press-section-label svg {
+    color: #047857;
+  }
+
+  .press-chips-flex {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .press-chip {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 0.35rem !important;
+    background-color: #f1f5f9 !important;
+    border: 1px solid #cbd5e1 !important;
+    padding: 0.35rem 0.65rem !important;
+    border-radius: 6px !important;
+    font-size: 0.74rem !important;
+    color: #0f172a !important;
+    text-decoration: none !important;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+  }
+
+  .press-chip:hover {
+    background-color: #ecfdf5 !important;
+    border-color: #047857 !important;
+    color: #047857 !important;
+    transform: translateY(-1px);
+    box-shadow: 0 3px 8px rgba(4, 120, 87, 0.12);
+  }
+
+  .chip-name {
+    font-weight: 700 !important;
+    color: #0f172a !important;
+  }
+
+  .press-chip:hover .chip-name {
+    color: #047857 !important;
+  }
+
+  .chip-sub {
+    font-size: 0.68rem !important;
+    color: #64748b !important;
+  }
+
+  .press-chip svg {
+    color: #94a3b8;
+    transition: transform 0.2s ease;
+  }
+
+  .press-chip:hover svg {
+    color: #047857;
+    transform: translate(1px, -1px);
+  }
+
+  /* Card Bottom */
+  .card-bottom {
+    margin-top: auto;
+    padding-top: 0.85rem;
+    border-top: 1px solid #f1f5f9;
+  }
+
+  .card-action-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.825rem;
+    font-weight: 700;
+    color: #047857 !important;
+    text-decoration: none !important;
+    transition: color 0.2s ease;
+  }
+
+  .card-action-link:hover {
+    color: #065f46 !important;
+  }
+
+  @media (max-width: 768px) {
+    .initiatives-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
